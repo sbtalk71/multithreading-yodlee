@@ -5,6 +5,9 @@ public class Resource {
 	public static void printMessage(String message) {
 		System.out.print("["+message);
 		try {
+			Thread.sleep(1000);
+			Thread.yield();
+			System.out.println(Thread.currentThread().getName()+" called yield()");
 			Thread.sleep(3000);
 			System.out.println("]");
 		} catch (InterruptedException e) {
